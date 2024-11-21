@@ -24,5 +24,5 @@ fake_kube_logs = ["""
 ]
 
 print("Retrieving kube logs ....\n")
-print(fake_kube_logs[random.randint(0, len(fake_kube_logs))])
+print(fake_kube_logs[random.randint(0, len(fake_kube_logs)-1)])
 print("\nThat's all we have found")
