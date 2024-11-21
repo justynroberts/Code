@@ -1,9 +1,4 @@
-
-
-print("something run")
-"""
 import random
-"""
 
 fake_kube_logs = ["""
 {"@timestamp":"2024-11-21T11:54:53.478908000Z","level_value":300,"logger_name":"org.apache.kafka.clients.NetworkClient","explicit_ts":"21 Nov 2024 11:54:53,478 UTC","thread_id":17,"thread_name":"org.springframework.kafka.KafkaListenerEndpointContainer#5-0-C-1","@version":"1.1.0","thread_priority":5,"message":"[Consumer clientId=<redacted>-triage-0, groupId=<redacted>-v2-<redacted>-triage] Error while fetching metadata with correlation id <redacted> : {chase.<redacted>-v2.<redacted>-event-v003.TRIAGE=UNKNOWN_TOPIC_OR_PARTITION}","level":"WARN"}
@@ -28,8 +23,6 @@ fake_kube_logs = ["""
 """
 ]
 
-"""
 print("Retrieving kube logs ....\n")
-print(fake_kube_logs[random.random(0, len(fake_kube_logs))])
+print(fake_kube_logs[random.randint(0, len(fake_kube_logs))])
 print("\nThat's all we have found")
-"""
