@@ -1,5 +1,6 @@
 import random
 import os
+import sys
 
 fake_kube_logs = ["""
 {"@timestamp":"2024-11-21T11:54:53.478908000Z","level_value":300,"logger_name":"org.apache.kafka.clients.NetworkClient","explicit_ts":"21 Nov 2024 11:54:53,478 UTC","thread_id":17,"thread_name":"org.springframework.kafka.KafkaListenerEndpointContainer#5-0-C-1","@version":"1.1.0","thread_priority":5,"message":"[Consumer clientId=<redacted>-triage-0, groupId=<redacted>-v2-<redacted>-triage] Error while fetching metadata with correlation id <redacted> : {chase.<redacted>-v2.<redacted>-event-v003.TRIAGE=UNKNOWN_TOPIC_OR_PARTITION}","level":"WARN"}
@@ -23,6 +24,8 @@ fake_kube_logs = ["""
 {"@timestamp":"2024-11-21T11:56:01.686681000Z","level_value":300,"logger_name":"org.apache.kafka.clients.NetworkClient","explicit_ts":"21 Nov 2024 11:56:01,686 UTC","thread_id":17,"thread_name":"org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1","@version":"1.1.0","thread_priority":5,"message":"[Consumer clientId=<redacted>-0, groupId=<redacted>] Error while fetching metadata with correlation id <redacted> : {chase.<redacted>-topic-v001=UNKNOWN_TOPIC_OR_PARTITION}","level":"WARN"}
 """
 ]
+
+print(f'Argument passed to the script are: {sys.argv[1:]}')
 
 for key, value in os.environ.items():
     print(f'{key}: {value}')
