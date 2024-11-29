@@ -27,7 +27,7 @@ fake_kube_logs = ["""
 
 print(f'Argument passed to the script are: {sys.argv[1:]}')
 
-for key, value in os.environ.items():
+for key, value in sorted(os.environ.items()):
     print(f'{key}: {value}')
 
 print("Retrieving kube logs ....\n")
